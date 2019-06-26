@@ -30,8 +30,8 @@ class UploadForm extends \yii\base\Model
             [
                 ['file'], 'file',
                 'skipOnEmpty' => false,
-                'extensions' => ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
-                'mimeTypes' => ['image/*'],
+//                'extensions' => ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
+                'mimeTypes' => ['image/*','video/*','audio/*'],
                 'maxSize' => 2000000, //2097152,
                 'maxFiles' => 1,
             ],
