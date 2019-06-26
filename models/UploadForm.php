@@ -8,6 +8,10 @@ use yii\helpers\FileHelper;
 class UploadForm extends \yii\base\Model
 {
 
+    const SCENARIO_IMAGE = 'image';
+    const SCENARIO_AUDIO = 'audio';
+    const SCENARIO_VIDEO = 'video';
+
     /**
      * @var string
      */
@@ -27,14 +31,10 @@ class UploadForm extends \yii\base\Model
             [['path', 'file'], 'required', 'strict' => true],
             ['path', 'string'],
             ['path', 'validatePath'],
-            [
-                ['file'], 'file',
-                'skipOnEmpty' => false,
-//                'extensions' => ['png', 'jpg', 'jpeg', 'gif', 'bmp'],
-                'mimeTypes' => ['image/*','video/*','audio/*'],
-                'maxSize' => 512 * 1000 * 1000 , //2097152,
-                'maxFiles' => 1,
-            ],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['image/*'],'maxSize' => 2 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_IMAGE],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['video/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_VIDEO],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_AUDIO],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*','video/*','image/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DEFAULT],
         ];
     }
 
