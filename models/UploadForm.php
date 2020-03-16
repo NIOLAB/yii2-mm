@@ -37,7 +37,7 @@ class UploadForm extends \yii\base\Model
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_AUDIO],
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
                 'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DOCUMENT],
-            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*','video/*','image/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DEFAULT],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*','video/*','image/*','application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DEFAULT],
         ];
     }
 
