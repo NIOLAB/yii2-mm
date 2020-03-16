@@ -11,6 +11,7 @@ class UploadForm extends \yii\base\Model
     const SCENARIO_IMAGE = 'image';
     const SCENARIO_AUDIO = 'audio';
     const SCENARIO_VIDEO = 'video';
+    const SCENARIO_DOCUMENT = 'document';
 
     /**
      * @var string
@@ -34,6 +35,8 @@ class UploadForm extends \yii\base\Model
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['image/*'],'maxSize' => 2 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_IMAGE],
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['video/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_VIDEO],
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_AUDIO],
+            [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'],
+                'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DOCUMENT],
             [['file'],'file','skipOnEmpty'=>false,'mimeTypes'=>['audio/*','video/*','image/*'],'maxSize' => 512 * 1000 * 1000,'maxFiles' => 1, 'on' => self::SCENARIO_DEFAULT],
         ];
     }
